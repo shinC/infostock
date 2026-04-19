@@ -1,0 +1,243 @@
+:root {
+    --bg-color: #0b0d10;
+    --text-color: #f1f3f5;
+    --card-bg: rgba(28, 31, 38, 0.7);
+    --card-border: rgba(255, 255, 255, 0.08);
+
+    /* Premium Heatmap Colors (Vibrant, accessible) */
+    --pos-3: #16c760; /* Strong Green */
+    --pos-2: #129d4c; /* Med Green */
+    --pos-1: #0d6e36; /* Light Green */
+    --neu:   #2a2d35; /* Neutral / Flat */
+    --neg-1: #9b2c2c; /* Light Red */
+    --neg-2: #cc3131; /* Med Red */
+    --neg-3: #f53d3d; /* Strong Red */
+    
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background: #ffffff;
+    background-color: #ffffff;
+    color: #1a202c;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: -0.03em;
+    background: linear-gradient(135deg, #fff 0%, #a0aec0 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header p {
+    color: #a0aab2;
+    font-size: 1.15rem;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: #2d3748;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 12px;
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+/* Grid Layouts */
+.grid-container {
+    display: grid;
+    gap: 16px;
+}
+
+.indices-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    margin-bottom: 50px;
+}
+
+.indices-3x3 {
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 50px;
+}
+
+/* Board Layout */
+.board-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px; /* To act as borders between columns if needed, but we rely on table borders */
+    background: #444; /* Grid line divider color */
+    border: 1px solid #444;
+}
+
+.sort-button {
+    background-color: #000080;
+    color: #ffff00;
+    border: none;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.sort-button:hover {
+    background-color: #000050;
+}
+
+.board-column {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sector Tables */
+.sector-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 0px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    background-color: #ffffff;
+}
+
+.sector-table th {
+    background-color: #FFBB00;
+    color: #000;
+    font-weight: 800;
+    text-align: center;
+    padding: 6px 10px;
+    border: 1px solid #ddd;
+    font-size: 1.05rem;
+}
+
+/* Market group table headers (using Navy if needed) */
+.market-header th {
+    background-color: #000080;
+    color: #FFFF00;
+}
+
+.sector-table td {
+    border: 1px solid #ddd;
+    padding: 6px 10px;
+    color: #1a202c;
+    white-space: nowrap;
+}
+
+.sector-table td.theme-name {
+    text-align: left;
+    width: 60%;
+    position: relative;
+    padding-left: 8px;
+}
+
+.sector-table td.theme-val {
+    text-align: right;
+    width: 40%;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+
+.theme-val-bg {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    z-index: -1;
+}
+
+.text-pos { color: #0d9d4c !important; font-weight: 700; }
+.text-neg { color: #e53e3e !important; font-weight: 700; }
+.text-neu { color: #4a5568; }
+
+/* Over 3% highlights */
+.bg-pos-strong {
+    background-color: #0d9d4c !important;
+    color: #ffffff !important;
+}
+.bg-neg-strong {
+    background-color: #e53e3e !important;
+    color: #ffffff !important;
+}
+
+/* Cards */
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    cursor: default;
+}
+
+.card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    filter: brightness(1.1);
+}
+
+.card-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    word-break: break-word;
+    opacity: 0.9;
+    letter-spacing: 0.02em;
+}
+
+.card-value {
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Heatmap Classes */
+.pos-3 { background-color: var(--pos-3); color: #000; }
+.pos-2 { background-color: var(--pos-2); color: #fff; }
+.pos-1 { background-color: var(--pos-1); color: #fff; }
+.neu   { background-color: var(--neu);   color: #e2e8f0; }
+.neg-1 { background-color: var(--neg-1); color: #fff; }
+.neg-2 { background-color: var(--neg-2); color: #fff; }
+.neg-3 { background-color: var(--neg-3); color: #fff; }
+
+.loader {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #888;
+    padding: 40px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미국 주식 섹터 및 테마 등락율 대시보드</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>미국 주식 전일 기준 대시보드</h1>
+            <p>지수, 섹터 및 하위 테마 등락률 히트맵</p>
+        </header>
+
+        <section class="indices-section">
+            <h2>주요 지수 (3x3 Heatmap)</h2>
+            <div id="indices-container" class="grid-container indices-3x3">
+                <div class="loader">Loading...</div>
+            </div>
+        </section>
+
+        <section class="sectors-section">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(0, 0, 0, 0.1); margin-bottom: 24px; padding-bottom: 12px;">
+                <h2 style="border: none; margin: 0; padding: 0;">섹터 및 테마 시황 (Summary Board)</h2>
+                <div>
+                    <button id="filter-btn" class="sort-button" style="margin-right: 8px;">보기: 전체 뷰 📋</button>
+                    <button id="sort-btn" class="sort-button">정렬: 높은 ⬆️</button>
+                </div>
+            </div>
+            <div id="sectors-container" class="board-container">
+                <!-- 5 Columns will be generated inside -->
+                <div class="board-column" id="board-col-1"></div>
+                <div class="board-column" id="board-col-2"></div>
+                <div class="board-column" id="board-col-3"></div>
+                <div class="board-column" id="board-col-4"></div>
+                <div class="board-column" id="board-col-5"></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

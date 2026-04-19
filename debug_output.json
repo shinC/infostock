@@ -1,0 +1,848 @@
+{
+  "indices": [
+    {
+      "change": 0.0,
+      "name": "\ub2e4\uc6b0\uc874\uc2a4 30",
+      "original": "Dow 30"
+    },
+    {
+      "change": 0.0,
+      "name": "\ub098\uc2a4\ub2e5 100",
+      "original": "Nasdaq 100"
+    },
+    {
+      "change": 0.08,
+      "name": "\ub7ec\uc140 2000",
+      "original": "Russell 2000"
+    },
+    {
+      "change": 0.02,
+      "name": "S&P 500",
+      "original": "S&P 500"
+    },
+    {
+      "change": -10.32,
+      "name": "WTI \uc6d0\uc720",
+      "original": "WTI"
+    },
+    {
+      "change": -4.98,
+      "name": "VIX (\uacf5\ud3ec\uc9c0\uc218)",
+      "original": "VIX"
+    },
+    {
+      "change": 1.52,
+      "name": "\ub098\uc2a4\ub2e5",
+      "original": "Nasdaq"
+    },
+    {
+      "change": 1.05,
+      "name": "\ub274\uc695\uc99d\uad8c\uac70\ub798\uc18c",
+      "original": "NYSE"
+    },
+    {
+      "change": 2.43,
+      "name": "\ud544\ub77c\ub378\ud53c\uc544 \ubc18\ub3c4\uccb4",
+      "original": "Philadelphia Semiconductor"
+    }
+  ],
+  "sectors": [
+    {
+      "change": 2.11,
+      "name": "\uacbd\uae30\ubbfc\uac10\uc8fc",
+      "original": "consumercyclical",
+      "themes": [
+        {
+          "change": 5.274,
+          "name": "\uac00\uad6c/\uae30\uad6c",
+          "original": "furnishingsfixturesappliances"
+        },
+        {
+          "change": 4.973,
+          "name": "residentialconstruction",
+          "original": "residentialconstruction"
+        },
+        {
+          "change": 4.942,
+          "name": "autotruckdealerships",
+          "original": "autotruckdealerships"
+        },
+        {
+          "change": 4.86,
+          "name": "RV\ucc28\ub7c9",
+          "original": "recreationalvehicles"
+        },
+        {
+          "change": 4.628,
+          "name": "\uc5ec\ud589 \uc11c\ube44\uc2a4",
+          "original": "travelservices"
+        },
+        {
+          "change": 4.604,
+          "name": "\uc758\ub958 \uc81c\uc870",
+          "original": "apparelmanufacturing"
+        },
+        {
+          "change": 4.038,
+          "name": "textilemanufacturing",
+          "original": "textilemanufacturing"
+        },
+        {
+          "change": 3.701,
+          "name": "luxurygoods",
+          "original": "luxurygoods"
+        },
+        {
+          "change": 3.679,
+          "name": "\uc8fc\ud0dd \uac1c\uc120 \uc18c\ub9e4",
+          "original": "homeimprovementretail"
+        },
+        {
+          "change": 3.646,
+          "name": "\ubc31\ud654\uc810",
+          "original": "departmentstores"
+        },
+        {
+          "change": 3.498,
+          "name": "\uc219\ubc15",
+          "original": "lodging"
+        },
+        {
+          "change": 3.173,
+          "name": "\ub808\uc800",
+          "original": "leisure"
+        },
+        {
+          "change": 2.902,
+          "name": "\ud3ec\uc7a5/\uc6a9\uae30",
+          "original": "packagingcontainers"
+        },
+        {
+          "change": 2.873,
+          "name": "\uc790\ub3d9\ucc28 \uc81c\uc870",
+          "original": "automanufacturers"
+        },
+        {
+          "change": 2.766,
+          "name": "\uc790\ub3d9\ucc28 \ubd80\ud488",
+          "original": "autoparts"
+        },
+        {
+          "change": 2.521,
+          "name": "apparelretail",
+          "original": "apparelretail"
+        },
+        {
+          "change": 2.248,
+          "name": "\uc2e0\ubc1c/\uc561\uc138\uc11c\ub9ac",
+          "original": "footwearaccessories"
+        },
+        {
+          "change": 2.091,
+          "name": "\uc804\ubb38 \uc18c\ub9e4",
+          "original": "specialtyretail"
+        },
+        {
+          "change": 1.796,
+          "name": "\ub808\uc2a4\ud1a0\ub791",
+          "original": "restaurants"
+        },
+        {
+          "change": 1.728,
+          "name": "resortscasinos",
+          "original": "resortscasinos"
+        },
+        {
+          "change": 0.771,
+          "name": "\uac1c\uc778 \uc11c\ube44\uc2a4",
+          "original": "personalservices"
+        },
+        {
+          "change": 0.654,
+          "name": "\uc778\ud130\ub137 \uc18c\ub9e4",
+          "original": "internetretail"
+        },
+        {
+          "change": -0.15,
+          "name": "gambling",
+          "original": "gambling"
+        }
+      ]
+    },
+    {
+      "change": 2,
+      "name": "\uc0b0\uc5c5\uc7ac",
+      "original": "industrials",
+      "themes": [
+        {
+          "change": 5.508,
+          "name": "\ud56d\uacf5",
+          "original": "airlines"
+        },
+        {
+          "change": 4.897,
+          "name": "metalfabrication",
+          "original": "metalfabrication"
+        },
+        {
+          "change": 4.13,
+          "name": "rentalleasingservices",
+          "original": "rentalleasingservices"
+        },
+        {
+          "change": 3.321,
+          "name": "\uac74\ucd95 \uc81c\ud488/\uc7a5\ube44",
+          "original": "buildingproductsequipment"
+        },
+        {
+          "change": 3.142,
+          "name": "\ub3c4\uad6c/\ubd80\uc18d\ud488",
+          "original": "toolsaccessories"
+        },
+        {
+          "change": 2.881,
+          "name": "engineeringconstruction",
+          "original": "engineeringconstruction"
+        },
+        {
+          "change": 2.787,
+          "name": "\ud2b9\uc218 \uc0b0\uc5c5 \uae30\uacc4",
+          "original": "specialtyindustrialmachinery"
+        },
+        {
+          "change": 2.517,
+          "name": "electricalequipmentparts",
+          "original": "electricalequipmentparts"
+        },
+        {
+          "change": 2.489,
+          "name": "securityprotectionservices",
+          "original": "securityprotectionservices"
+        },
+        {
+          "change": 2.455,
+          "name": "businessequipmentsupplies",
+          "original": "businessequipmentsupplies"
+        },
+        {
+          "change": 2.287,
+          "name": "industrialdistribution",
+          "original": "industrialdistribution"
+        },
+        {
+          "change": 2.275,
+          "name": "\ub18d\uae30\uacc4/\uac74\uc124\uc911\uc7a5\ube44",
+          "original": "farmheavyconstructionmachinery"
+        },
+        {
+          "change": 1.998,
+          "name": "\ub300\uae30\uc5c5",
+          "original": "conglomerates"
+        },
+        {
+          "change": 1.946,
+          "name": "\ud2b8\ub7ed \uc6b4\uc1a1",
+          "original": "trucking"
+        },
+        {
+          "change": 1.835,
+          "name": "integratedfreightlogistics",
+          "original": "integratedfreightlogistics"
+        },
+        {
+          "change": 1.391,
+          "name": "\uc624\uc5fc \ucc98\ub9ac/\ud1b5\uc81c",
+          "original": "pollutiontreatmentcontrols"
+        },
+        {
+          "change": 1.208,
+          "name": "staffingemploymentservices",
+          "original": "staffingemploymentservices"
+        },
+        {
+          "change": 0.933,
+          "name": "\ucca0\ub3c4",
+          "original": "railroads"
+        },
+        {
+          "change": 0.922,
+          "name": "\ud2b9\uc218 \ube44\uc988\ub2c8\uc2a4 \uc11c\ube44\uc2a4",
+          "original": "specialtybusinessservices"
+        },
+        {
+          "change": 0.885,
+          "name": "\ubc29\uc0b0/\uc6b0\uc8fc",
+          "original": "aerospacedefense"
+        },
+        {
+          "change": 0.826,
+          "name": "marineshipping",
+          "original": "marineshipping"
+        },
+        {
+          "change": 0.8,
+          "name": "airportsairservices",
+          "original": "airportsairservices"
+        },
+        {
+          "change": 0.586,
+          "name": "consultingservices",
+          "original": "consultingservices"
+        },
+        {
+          "change": -0.291,
+          "name": "wastemanagement",
+          "original": "wastemanagement"
+        }
+      ]
+    },
+    {
+      "change": 1.693,
+      "name": "\ud14c\ud06c\ub180\ub85c\uc9c0",
+      "original": "technology",
+      "themes": [
+        {
+          "change": 3.069,
+          "name": "\ubc18\ub3c4\uccb4 \uc7a5\ube44/\uc18c\uc7ac",
+          "original": "semiconductorequipmentmaterials"
+        },
+        {
+          "change": 2.548,
+          "name": "\uac00\uc804 \uae30\uae30",
+          "original": "consumerelectronics"
+        },
+        {
+          "change": 2.143,
+          "name": "\uc804\uc790/\ucef4\ud4e8\ud130 \uc720\ud1b5",
+          "original": "electronicscomputerdistribution"
+        },
+        {
+          "change": 1.974,
+          "name": "\uacfc\ud559\uae30\uc220 \uae30\uae30",
+          "original": "scientifictechnicalinstruments"
+        },
+        {
+          "change": 1.841,
+          "name": "\uc804\uc790 \ubd80\ud488",
+          "original": "electroniccomponents"
+        },
+        {
+          "change": 1.805,
+          "name": "\ucef4\ud4e8\ud130 \ud558\ub4dc\uc6e8\uc5b4",
+          "original": "computerhardware"
+        },
+        {
+          "change": 1.805,
+          "name": "\ubc18\ub3c4\uccb4",
+          "original": "semiconductors"
+        },
+        {
+          "change": 1.433,
+          "name": "\ud0dc\uc591\uad11",
+          "original": "solar"
+        },
+        {
+          "change": 1.305,
+          "name": "IT \uc11c\ube44\uc2a4",
+          "original": "informationtechnologyservices"
+        },
+        {
+          "change": 1.296,
+          "name": "\uc18c\ud504\ud2b8\uc6e8\uc5b4 (\uc571)",
+          "original": "softwareapplication"
+        },
+        {
+          "change": 1.162,
+          "name": "\ud1b5\uc2e0 \uc7a5\ube44",
+          "original": "communicationequipment"
+        },
+        {
+          "change": 0.558,
+          "name": "\uc18c\ud504\ud2b8\uc6e8\uc5b4 (\uc778\ud504\ub77c)",
+          "original": "softwareinfrastructure"
+        }
+      ]
+    },
+    {
+      "change": 1.593,
+      "name": "\ubd80\ub3d9\uc0b0",
+      "original": "realestate",
+      "themes": [
+        {
+          "change": 2.743,
+          "name": "REIT (\uc8fc\uac70)",
+          "original": "reitresidential"
+        },
+        {
+          "change": 2.561,
+          "name": "REIT (\ud638\ud154)",
+          "original": "reithotelmotel"
+        },
+        {
+          "change": 2.461,
+          "name": "REIT (\ubaa8\uae30\uc9c0)",
+          "original": "reitmortgage"
+        },
+        {
+          "change": 2.442,
+          "name": "REIT (\uc624\ud53c\uc2a4)",
+          "original": "reitoffice"
+        },
+        {
+          "change": 2.273,
+          "name": "REIT (\uc0b0\uc5c5\uc7ac)",
+          "original": "reitindustrial"
+        },
+        {
+          "change": 2.205,
+          "name": "\ubd80\ub3d9\uc0b0 \uc11c\ube44\uc2a4",
+          "original": "realestateservices"
+        },
+        {
+          "change": 2.02,
+          "name": "realestatediversified",
+          "original": "realestatediversified"
+        },
+        {
+          "change": 1.869,
+          "name": "REIT (\ub2e4\uac01\ud654)",
+          "original": "reitdiversified"
+        },
+        {
+          "change": 1.749,
+          "name": "\ubd80\ub3d9\uc0b0 \uac1c\ubc1c",
+          "original": "realestatedevelopment"
+        },
+        {
+          "change": 1.705,
+          "name": "REIT (\ud2b9\uc218)",
+          "original": "reitspecialty"
+        },
+        {
+          "change": 1.675,
+          "name": "REIT (\uc18c\ub9e4)",
+          "original": "reitretail"
+        },
+        {
+          "change": -1.069,
+          "name": "REIT (\uc758\ub8cc)",
+          "original": "reithealthcarefacilities"
+        }
+      ]
+    },
+    {
+      "change": 1.56,
+      "name": "\ud5ec\uc2a4\ucf00\uc5b4",
+      "original": "healthcare",
+      "themes": [
+        {
+          "change": 2.258,
+          "name": "\uc758\ub8cc \ubcf4\uae09/\uc18c\ubaa8\ud488",
+          "original": "medicalinstrumentssupplies"
+        },
+        {
+          "change": 2.235,
+          "name": "\uc9c4\ub2e8/\uc5f0\uad6c",
+          "original": "diagnosticsresearch"
+        },
+        {
+          "change": 1.845,
+          "name": "\ud2b9\uc218/\uc81c\ub124\ub9ad \uc81c\uc57d",
+          "original": "drugmanufacturersspecialtygeneric"
+        },
+        {
+          "change": 1.796,
+          "name": "\uc758\ub8cc \ubcf4\ud5d8",
+          "original": "healthcareplans"
+        },
+        {
+          "change": 1.681,
+          "name": "\ubc14\uc774\uc624\ud14c\ud06c",
+          "original": "biotechnology"
+        },
+        {
+          "change": 1.677,
+          "name": "\uc758\ub8cc \uae30\uae30",
+          "original": "medicaldevices"
+        },
+        {
+          "change": 1.598,
+          "name": "\uc758\ub8cc \uc815\ubcf4",
+          "original": "healthinformationservices"
+        },
+        {
+          "change": 1.308,
+          "name": "\uc77c\ubc18 \uc81c\uc57d",
+          "original": "drugmanufacturersgeneral"
+        },
+        {
+          "change": 1.288,
+          "name": "\uc758\ub8cc \uc2dc\uc124",
+          "original": "medicalcarefacilities"
+        },
+        {
+          "change": 0.52,
+          "name": "\uc57d\uad6d",
+          "original": "pharmaceuticalretailers"
+        },
+        {
+          "change": 0.51,
+          "name": "\uc758\ub8cc \uc720\ud1b5",
+          "original": "medicaldistribution"
+        }
+      ]
+    },
+    {
+      "change": 1.395,
+      "name": "\uacbd\uae30\ubc29\uc5b4\uc8fc",
+      "original": "consumerdefensive",
+      "themes": [
+        {
+          "change": 3.745,
+          "name": "\uc2dd\ud488 \uc720\ud1b5",
+          "original": "fooddistribution"
+        },
+        {
+          "change": 2.308,
+          "name": "\uac00\uc815/\uac1c\uc778 \uc6a9\ud488",
+          "original": "householdpersonalproducts"
+        },
+        {
+          "change": 1.978,
+          "name": "\ud560\uc778\uc810",
+          "original": "discountstores"
+        },
+        {
+          "change": 1.752,
+          "name": "\uc74c\ub8cc(\uc640\uc778/\uc99d\ub958\uc8fc)",
+          "original": "beverageswineriesdistilleries"
+        },
+        {
+          "change": 1.59,
+          "name": "\uad50\uc721/\ud6c8\ub828",
+          "original": "educationtrainingservices"
+        },
+        {
+          "change": 1.107,
+          "name": "\uc2dd\ub8cc\ud488\uc810",
+          "original": "grocerystores"
+        },
+        {
+          "change": 0.772,
+          "name": "packagedfoods",
+          "original": "packagedfoods"
+        },
+        {
+          "change": 0.685,
+          "name": "\uc74c\ub8cc(\ubb34\uc54c\ucf5c)",
+          "original": "beveragesnonalcoholic"
+        },
+        {
+          "change": 0.489,
+          "name": "\ub2f4\ubc30",
+          "original": "tobacco"
+        },
+        {
+          "change": 0.437,
+          "name": "\uc81c\uacfc",
+          "original": "confectioners"
+        },
+        {
+          "change": 0.211,
+          "name": "\uc74c\ub8cc(\uc8fc\ub958)",
+          "original": "beveragesbrewers"
+        },
+        {
+          "change": -1.536,
+          "name": "\ub18d\uc0b0\ubb3c",
+          "original": "farmproducts"
+        }
+      ]
+    },
+    {
+      "change": 1.372,
+      "name": "\uc18c\uc7ac",
+      "original": "basicmaterials",
+      "themes": [
+        {
+          "change": 3.816,
+          "name": "\ubaa9\uc7ac/\ubc8c\ubaa9",
+          "original": "lumberwoodproduction"
+        },
+        {
+          "change": 3.369,
+          "name": "\uae08",
+          "original": "gold"
+        },
+        {
+          "change": 3.025,
+          "name": "\uad6c\ub9ac",
+          "original": "copper"
+        },
+        {
+          "change": 2.92,
+          "name": "otherpreciousmetalsmining",
+          "original": "otherpreciousmetalsmining"
+        },
+        {
+          "change": 2.802,
+          "name": "\ucca0\uac15",
+          "original": "steel"
+        },
+        {
+          "change": 2.506,
+          "name": "\uac74\ucd95 \uc790\uc7ac",
+          "original": "buildingmaterials"
+        },
+        {
+          "change": 2.338,
+          "name": "silver",
+          "original": "silver"
+        },
+        {
+          "change": 1.587,
+          "name": "\uc81c\uc9c0",
+          "original": "paperpaperproducts"
+        },
+        {
+          "change": 1.405,
+          "name": "otherindustrialmetalsmining",
+          "original": "otherindustrialmetalsmining"
+        },
+        {
+          "change": 0.577,
+          "name": "cokingcoal",
+          "original": "cokingcoal"
+        },
+        {
+          "change": -0.428,
+          "name": "\ud2b9\uc218 \ud654\ud559",
+          "original": "specialtychemicals"
+        },
+        {
+          "change": -3.319,
+          "name": "agriculturalinputs",
+          "original": "agriculturalinputs"
+        },
+        {
+          "change": -4.897,
+          "name": "aluminum",
+          "original": "aluminum"
+        },
+        {
+          "change": -8.502,
+          "name": "\ud654\ud559",
+          "original": "chemicals"
+        }
+      ]
+    },
+    {
+      "change": 1.176,
+      "name": "\uae08\uc735",
+      "original": "financial",
+      "themes": [
+        {
+          "change": 4.763,
+          "name": "mortgagefinance",
+          "original": "mortgagefinance"
+        },
+        {
+          "change": 2.337,
+          "name": "insurancespecialty",
+          "original": "insurancespecialty"
+        },
+        {
+          "change": 1.96,
+          "name": "\uc9c0\uc5ed \uc740\ud589",
+          "original": "banksregional"
+        },
+        {
+          "change": 1.82,
+          "name": "\uc790\ubcf8 \uc2dc\uc7a5",
+          "original": "capitalmarkets"
+        },
+        {
+          "change": 1.775,
+          "name": "\uc790\uc0b0\uc6b4\uc6a9",
+          "original": "assetmanagement"
+        },
+        {
+          "change": 1.314,
+          "name": "creditservices",
+          "original": "creditservices"
+        },
+        {
+          "change": 1.273,
+          "name": "\ub2e4\uac01\ud654 \uc740\ud589",
+          "original": "banksdiversified"
+        },
+        {
+          "change": 1.232,
+          "name": "insurancereinsurance",
+          "original": "insurancereinsurance"
+        },
+        {
+          "change": 1.206,
+          "name": "financialconglomerates",
+          "original": "financialconglomerates"
+        },
+        {
+          "change": 1.129,
+          "name": "\uc0dd\uba85 \ubcf4\ud5d8",
+          "original": "insurancelife"
+        },
+        {
+          "change": 1.073,
+          "name": "shellcompanies",
+          "original": "shellcompanies"
+        },
+        {
+          "change": 0.791,
+          "name": "\uc190\ud574\ubcf4\ud5d8",
+          "original": "insurancepropertycasualty"
+        },
+        {
+          "change": 0.027,
+          "name": "\ub2e4\uac01\ud654 \ubcf4\ud5d8",
+          "original": "insurancediversified"
+        },
+        {
+          "change": -0.041,
+          "name": "financialdatastockexchanges",
+          "original": "financialdatastockexchanges"
+        },
+        {
+          "change": -1.523,
+          "name": "\ubcf4\ud5d8 \ube0c\ub85c\ucee4",
+          "original": "insurancebrokers"
+        }
+      ]
+    },
+    {
+      "change": 0.813,
+      "name": "\ud1b5\uc2e0\uc11c\ube44\uc2a4",
+      "original": "communicationservices",
+      "themes": [
+        {
+          "change": 2.286,
+          "name": "\ubc29\uc1a1",
+          "original": "broadcasting"
+        },
+        {
+          "change": 1.788,
+          "name": "advertisingagencies",
+          "original": "advertisingagencies"
+        },
+        {
+          "change": 1.765,
+          "name": "\uc778\ud130\ub137 \ucee8\ud150\uce20/\uc815\ubcf4",
+          "original": "internetcontentinformation"
+        },
+        {
+          "change": 1.25,
+          "name": "publishing",
+          "original": "publishing"
+        },
+        {
+          "change": 0.245,
+          "name": "\ud1b5\uc2e0 \uc11c\ube44\uc2a4",
+          "original": "telecomservices"
+        },
+        {
+          "change": -0.179,
+          "name": "\uac8c\uc784/\uba40\ud2f0\ubbf8\ub514\uc5b4",
+          "original": "electronicgamingmultimedia"
+        },
+        {
+          "change": -4.295,
+          "name": "\uc5d4\ud130\ud14c\uc778\uba3c\ud2b8",
+          "original": "entertainment"
+        }
+      ]
+    },
+    {
+      "change": -0.332,
+      "name": "\uc720\ud2f8\ub9ac\ud2f0",
+      "original": "utilities",
+      "themes": [
+        {
+          "change": 0.71,
+          "name": "\uc720\ud2f8\ub9ac\ud2f0 (\uc218\ub3c4)",
+          "original": "utilitiesregulatedwater"
+        },
+        {
+          "change": -0.181,
+          "name": "\uc720\ud2f8\ub9ac\ud2f0 (\uac00\uc2a4)",
+          "original": "utilitiesregulatedgas"
+        },
+        {
+          "change": -0.253,
+          "name": "\uc720\ud2f8\ub9ac\ud2f0 (\uc804\ub825)",
+          "original": "utilitiesregulatedelectric"
+        },
+        {
+          "change": -0.639,
+          "name": "utilitiesindependentpowerproducers",
+          "original": "utilitiesindependentpowerproducers"
+        },
+        {
+          "change": -0.861,
+          "name": "\uc720\ud2f8\ub9ac\ud2f0 (\uc2e0\uc7ac\uc0dd)",
+          "original": "utilitiesrenewable"
+        },
+        {
+          "change": -1.003,
+          "name": "\uc720\ud2f8\ub9ac\ud2f0 (\ub2e4\uac01\ud654)",
+          "original": "utilitiesdiversified"
+        }
+      ]
+    },
+    {
+      "change": -3.165,
+      "name": "\uc5d0\ub108\uc9c0",
+      "original": "energy",
+      "themes": [
+        {
+          "change": -0.106,
+          "name": "uranium",
+          "original": "uranium"
+        },
+        {
+          "change": -0.626,
+          "name": "\uc911\ub958(Midstream)",
+          "original": "oilgasmidstream"
+        },
+        {
+          "change": -0.82,
+          "name": "\uc11d\uc720/\uac00\uc2a4 \uc7a5\ube44/\uc11c\ube44\uc2a4",
+          "original": "oilgasequipmentservices"
+        },
+        {
+          "change": -3.506,
+          "name": "thermalcoal",
+          "original": "thermalcoal"
+        },
+        {
+          "change": -3.94,
+          "name": "\uc885\ud569 \uc11d\uc720/\uac00\uc2a4",
+          "original": "oilgasintegrated"
+        },
+        {
+          "change": -4.354,
+          "name": "\uc11d\uc720/\uac00\uc2a4 \ud0d0\uc0ac",
+          "original": "oilgasep"
+        },
+        {
+          "change": -4.96,
+          "name": "\uc11d\uc720/\uac00\uc2a4 \uc2dc\ucd94",
+          "original": "oilgasdrilling"
+        },
+        {
+          "change": -5.555,
+          "name": "\uc11d\uc720/\uac00\uc2a4 \uc815\uc81c/\ub9c8\ucf00\ud305",
+          "original": "oilgasrefiningmarketing"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1074 @@
+{
+  "aicompute": {
+    "main_en": "Artificial Intelligence",
+    "sub": "Compute"
+  },
+  "aicloud": {
+    "main_en": "Artificial Intelligence",
+    "sub": "Cloud"
+  },
+  "aimodels": {
+    "main_en": "Artificial Intelligence",
+    "sub": "Models"
+  },
+  "aidata": {
+    "main_en": "Artificial Intelligence",
+    "sub": "Data"
+  },
+  "aienterprise": {
+    "main_en": "Artificial Intelligence",
+    "sub": "Enterprise"
+  },
+  "ainetworking": {
+    "main_en": "Artificial Intelligence",
+    "sub": "Networking"
+  },
+  "aisecurity": {
+    "main_en": "Artificial Intelligence",
+    "sub": "Security"
+  },
+  "aiedge": {
+    "main_en": "Artificial Intelligence",
+    "sub": "Edge"
+  },
+  "airobotics": {
+    "main_en": "Artificial Intelligence",
+    "sub": "Robotics"
+  },
+  "aiapplications": {
+    "main_en": "Artificial Intelligence",
+    "sub": "Applications"
+  },
+  "aiadssearch": {
+    "main_en": "Artificial Intelligence",
+    "sub": "Ads & Search"
+  },
+  "aienergy": {
+    "main_en": "Artificial Intelligence",
+    "sub": "Energy"
+  },
+  "aiagi": {
+    "main_en": "Artificial Intelligence",
+    "sub": "AGI"
+  },
+  "cloudhyperscalers": {
+    "main_en": "Cloud Computing",
+    "sub": "Hyperscalers"
+  },
+  "clouddatacenters": {
+    "main_en": "Cloud Computing",
+    "sub": "Data Centers"
+  },
+  "clouddatabases": {
+    "main_en": "Cloud Computing",
+    "sub": "Databases"
+  },
+  "clouddevops": {
+    "main_en": "Cloud Computing",
+    "sub": "DevOps"
+  },
+  "cloudsecurity": {
+    "main_en": "Cloud Computing",
+    "sub": "Security"
+  },
+  "cloudhybridcloud": {
+    "main_en": "Cloud Computing",
+    "sub": "Hybrid Cloud"
+  },
+  "cloudmulticloud": {
+    "main_en": "Cloud Computing",
+    "sub": "Multi Cloud"
+  },
+  "cloudserverless": {
+    "main_en": "Cloud Computing",
+    "sub": "Serverless"
+  },
+  "cloudpaas": {
+    "main_en": "Cloud Computing",
+    "sub": "PaaS"
+  },
+  "cloudhardware": {
+    "main_en": "Cloud Computing",
+    "sub": "Hardware"
+  },
+  "cloudedge": {
+    "main_en": "Cloud Computing",
+    "sub": "Edge"
+  },
+  "cloudhsaas": {
+    "main_en": "Cloud Computing",
+    "sub": "H-SaaS"
+  },
+  "semiscompute": {
+    "main_en": "Semiconductors",
+    "sub": "Compute"
+  },
+  "semismemory": {
+    "main_en": "Semiconductors",
+    "sub": "Memory"
+  },
+  "semisanalog": {
+    "main_en": "Semiconductors",
+    "sub": "Analog"
+  },
+  "semiswireless": {
+    "main_en": "Semiconductors",
+    "sub": "Wireless"
+  },
+  "semisfoundries": {
+    "main_en": "Semiconductors",
+    "sub": "Foundries"
+  },
+  "semisdesigntools": {
+    "main_en": "Semiconductors",
+    "sub": "Design Tools"
+  },
+  "semislithography": {
+    "main_en": "Semiconductors",
+    "sub": "Lithography"
+  },
+  "semispackaging": {
+    "main_en": "Semiconductors",
+    "sub": "Packaging"
+  },
+  "semisnextgen": {
+    "main_en": "Semiconductors",
+    "sub": "Next-Gen"
+  },
+  "cybersecurityzerotrust": {
+    "main_en": "Cybersecurity",
+    "sub": "ZeroTrust"
+  },
+  "cybersecurityendpoint": {
+    "main_en": "Cybersecurity",
+    "sub": "Endpoint"
+  },
+  "cybersecuritynetwork": {
+    "main_en": "Cybersecurity",
+    "sub": "Network"
+  },
+  "cybersecuritycloud": {
+    "main_en": "Cybersecurity",
+    "sub": "Cloud"
+  },
+  "cybersecurityidentityiam": {
+    "main_en": "Cybersecurity",
+    "sub": "Identity IAM"
+  },
+  "cybersecuritythreatops": {
+    "main_en": "Cybersecurity",
+    "sub": "ThreatOps"
+  },
+  "cybersecuritysiem": {
+    "main_en": "Cybersecurity",
+    "sub": "SIEM"
+  },
+  "cybersecurityappsecurity": {
+    "main_en": "Cybersecurity",
+    "sub": "App Security"
+  },
+  "softwareos": {
+    "main_en": "Software",
+    "sub": "OS"
+  },
+  "softwareenterprise": {
+    "main_en": "Software",
+    "sub": "Enterprise"
+  },
+  "softwarecrm": {
+    "main_en": "Software",
+    "sub": "CRM"
+  },
+  "softwarecollaboration": {
+    "main_en": "Software",
+    "sub": "Collaboration"
+  },
+  "softwaregaming": {
+    "main_en": "Software",
+    "sub": "Gaming"
+  },
+  "softwareecommerce": {
+    "main_en": "Software",
+    "sub": "E-Commerce"
+  },
+  "softwaredesign": {
+    "main_en": "Software",
+    "sub": "Design"
+  },
+  "softwaresecurity": {
+    "main_en": "Software",
+    "sub": "Security"
+  },
+  "softwaredevops": {
+    "main_en": "Software",
+    "sub": "DevOps"
+  },
+  "softwaredataanalytics": {
+    "main_en": "Software",
+    "sub": "Data Analytics"
+  },
+  "softwarehsaas": {
+    "main_en": "Software",
+    "sub": "H-SaaS"
+  },
+  "softwarevsaas": {
+    "main_en": "Software",
+    "sub": "V-SaaS"
+  },
+  "hardwarepcsdevices": {
+    "main_en": "Hardware",
+    "sub": "PCs & Devices"
+  },
+  "hardwareservers": {
+    "main_en": "Hardware",
+    "sub": "Servers"
+  },
+  "hardwarenetworking": {
+    "main_en": "Hardware",
+    "sub": "Networking"
+  },
+  "hardwarestorage": {
+    "main_en": "Hardware",
+    "sub": "Storage"
+  },
+  "hardwaredatacenters": {
+    "main_en": "Hardware",
+    "sub": "Data Centers"
+  },
+  "hardwareelectronics": {
+    "main_en": "Hardware",
+    "sub": "Electronics"
+  },
+  "hardwaregaming": {
+    "main_en": "Hardware",
+    "sub": "Gaming"
+  },
+  "hardwareprinting": {
+    "main_en": "Hardware",
+    "sub": "Printing"
+  },
+  "hardwaretelecom": {
+    "main_en": "Hardware",
+    "sub": "Telecom"
+  },
+  "hardwareindustrialiot": {
+    "main_en": "Hardware",
+    "sub": "Industrial IoT"
+  },
+  "hardwarenextgen": {
+    "main_en": "Hardware",
+    "sub": "Next-Gen"
+  },
+  "quantumhardware": {
+    "main_en": "Quantum Computing",
+    "sub": "Hardware"
+  },
+  "quantumcloud": {
+    "main_en": "Quantum Computing",
+    "sub": "Cloud"
+  },
+  "quantumsoftware": {
+    "main_en": "Quantum Computing",
+    "sub": "Software"
+  },
+  "quantumenablingtech": {
+    "main_en": "Quantum Computing",
+    "sub": "Enabling Tech"
+  },
+  "quantumnetworking": {
+    "main_en": "Quantum Computing",
+    "sub": "Networking"
+  },
+  "quantumapplications": {
+    "main_en": "Quantum Computing",
+    "sub": "Applications"
+  },
+  "varealityhardware": {
+    "main_en": "Virtual & Augmented Reality",
+    "sub": "Hardware"
+  },
+  "varealitysoftware": {
+    "main_en": "Virtual & Augmented Reality",
+    "sub": "Software"
+  },
+  "varealityapplications": {
+    "main_en": "Virtual & Augmented Reality",
+    "sub": "Applications"
+  },
+  "varealityinfrastructure": {
+    "main_en": "Virtual & Augmented Reality",
+    "sub": "Infrastructure"
+  },
+  "varealityenterprise": {
+    "main_en": "Virtual & Augmented Reality",
+    "sub": "Enterprise"
+  },
+  "biometricshardware": {
+    "main_en": "Biometrics",
+    "sub": "Hardware"
+  },
+  "biometricssoftware": {
+    "main_en": "Biometrics",
+    "sub": "Software"
+  },
+  "biometricsidentity": {
+    "main_en": "Biometrics",
+    "sub": "Identity"
+  },
+  "biometricsgovdefense": {
+    "main_en": "Biometrics",
+    "sub": "Gov & Defense"
+  },
+  "bigdatainfrastructure": {
+    "main_en": "Big Data",
+    "sub": "Infrastructure"
+  },
+  "bigdataanalyticsbi": {
+    "main_en": "Big Data",
+    "sub": "Analytics & BI"
+  },
+  "bigdataproviders": {
+    "main_en": "Big Data",
+    "sub": "Providers"
+  },
+  "bigdataaiplatforms": {
+    "main_en": "Big Data",
+    "sub": "AI Platforms"
+  },
+  "evsmanufacturers": {
+    "main_en": "Electric Vehicles",
+    "sub": "Manufacturers"
+  },
+  "evsbatteries": {
+    "main_en": "Electric Vehicles",
+    "sub": "Batteries"
+  },
+  "evscharging": {
+    "main_en": "Electric Vehicles",
+    "sub": "Charging"
+  },
+  "evschips": {
+    "main_en": "Electric Vehicles",
+    "sub": "Chips"
+  },
+  "evssuppliers": {
+    "main_en": "Electric Vehicles",
+    "sub": "Suppliers"
+  },
+  "evsselfdriving": {
+    "main_en": "Electric Vehicles",
+    "sub": "Self-Driving"
+  },
+  "evsfleets": {
+    "main_en": "Electric Vehicles",
+    "sub": "Fleets"
+  },
+  "automationrobotics": {
+    "main_en": "Industrial Automation",
+    "sub": "Robotics"
+  },
+  "automationautomation": {
+    "main_en": "Industrial Automation",
+    "sub": "Automation"
+  },
+  "automationmachinevision": {
+    "main_en": "Industrial Automation",
+    "sub": "Machine Vision"
+  },
+  "automationsoftware": {
+    "main_en": "Industrial Automation",
+    "sub": "Software"
+  },
+  "automationiot": {
+    "main_en": "Industrial Automation",
+    "sub": "IoT"
+  },
+  "automationlogistics": {
+    "main_en": "Industrial Automation",
+    "sub": "Logistics"
+  },
+  "automationdprinting": {
+    "main_en": "Industrial Automation",
+    "sub": "3D Printing"
+  },
+  "defensedrones": {
+    "main_en": "Defense & Aerospace",
+    "sub": "Drones"
+  },
+  "defensemissiles": {
+    "main_en": "Defense & Aerospace",
+    "sub": "Missiles"
+  },
+  "defensespacetech": {
+    "main_en": "Defense & Aerospace",
+    "sub": "SpaceTech"
+  },
+  "defensecyberdefense": {
+    "main_en": "Defense & Aerospace",
+    "sub": "CyberDefense"
+  },
+  "defenseweapons": {
+    "main_en": "Defense & Aerospace",
+    "sub": "Weapons"
+  },
+  "defenseaviation": {
+    "main_en": "Defense & Aerospace",
+    "sub": "Aviation"
+  },
+  "defensemanufacturing": {
+    "main_en": "Defense & Aerospace",
+    "sub": "Manufacturing"
+  },
+  "transportationrail": {
+    "main_en": "Transportation & Logistics",
+    "sub": "Rail"
+  },
+  "transportationtrucking": {
+    "main_en": "Transportation & Logistics",
+    "sub": "Trucking"
+  },
+  "transportationaircargo": {
+    "main_en": "Transportation & Logistics",
+    "sub": "Air Cargo"
+  },
+  "transportationmaritime": {
+    "main_en": "Transportation & Logistics",
+    "sub": "Maritime"
+  },
+  "transportationwarehousing": {
+    "main_en": "Transportation & Logistics",
+    "sub": "Warehousing"
+  },
+  "transportationairtravel": {
+    "main_en": "Transportation & Logistics",
+    "sub": "Air Travel"
+  },
+  "transportationinfrastructure": {
+    "main_en": "Transportation & Logistics",
+    "sub": "Infrastructure"
+  },
+  "transportationnextgen": {
+    "main_en": "Transportation & Logistics",
+    "sub": "Next-Gen"
+  },
+  "spacelaunch": {
+    "main_en": "Space Tech",
+    "sub": "Launch"
+  },
+  "spacesatellites": {
+    "main_en": "Space Tech",
+    "sub": "Satellites"
+  },
+  "spacedataanalytics": {
+    "main_en": "Space Tech",
+    "sub": "Data Analytics"
+  },
+  "spacedefense": {
+    "main_en": "Space Tech",
+    "sub": "Defense"
+  },
+  "spaceinfrastructure": {
+    "main_en": "Space Tech",
+    "sub": "Infrastructure"
+  },
+  "roboticsautomation": {
+    "main_en": "Robotics",
+    "sub": "Automation"
+  },
+  "roboticslogistics": {
+    "main_en": "Robotics",
+    "sub": "Logistics"
+  },
+  "roboticsavmobility": {
+    "main_en": "Robotics",
+    "sub": "AV & Mobility"
+  },
+  "roboticsmachinevision": {
+    "main_en": "Robotics",
+    "sub": "Machine Vision"
+  },
+  "roboticsmedical": {
+    "main_en": "Robotics",
+    "sub": "Medical"
+  },
+  "roboticsconsumer": {
+    "main_en": "Robotics",
+    "sub": "Consumer"
+  },
+  "telecomwireless": {
+    "main_en": "Telecommunications",
+    "sub": "Wireless"
+  },
+  "telecominfrastructure": {
+    "main_en": "Telecommunications",
+    "sub": "Infrastructure"
+  },
+  "telecomcloudedge": {
+    "main_en": "Telecommunications",
+    "sub": "Cloud & Edge"
+  },
+  "telecomg": {
+    "main_en": "Telecommunications",
+    "sub": "5G"
+  },
+  "telecomsatcom": {
+    "main_en": "Telecommunications",
+    "sub": "Satcom"
+  },
+  "telecomenterprise": {
+    "main_en": "Telecommunications",
+    "sub": "Enterprise"
+  },
+  "nanotechmaterials": {
+    "main_en": "Nanotechnology",
+    "sub": "Materials"
+  },
+  "nanotechmedicine": {
+    "main_en": "Nanotechnology",
+    "sub": "Medicine"
+  },
+  "nanotechelectronics": {
+    "main_en": "Nanotechnology",
+    "sub": "Electronics"
+  },
+  "nanotechenergy": {
+    "main_en": "Nanotechnology",
+    "sub": "Energy"
+  },
+  "nanotechproducts": {
+    "main_en": "Nanotechnology",
+    "sub": "Products"
+  },
+  "nanotechresearchtools": {
+    "main_en": "Nanotechnology",
+    "sub": "Research Tools"
+  },
+  "iotedgedevices": {
+    "main_en": "Internet of Things",
+    "sub": "Edge Devices"
+  },
+  "iotnetworking": {
+    "main_en": "Internet of Things",
+    "sub": "Networking"
+  },
+  "iothardware": {
+    "main_en": "Internet of Things",
+    "sub": "Hardware"
+  },
+  "iotsoftware": {
+    "main_en": "Internet of Things",
+    "sub": "Software"
+  },
+  "iotenterprise": {
+    "main_en": "Internet of Things",
+    "sub": "Enterprise"
+  },
+  "iotsecurity": {
+    "main_en": "Internet of Things",
+    "sub": "Security"
+  },
+  "autonomousavmobility": {
+    "main_en": "Autonomous Systems",
+    "sub": "AV & Mobility"
+  },
+  "autonomousindustrial": {
+    "main_en": "Autonomous Systems",
+    "sub": "Industrial"
+  },
+  "autonomousdefense": {
+    "main_en": "Autonomous Systems",
+    "sub": "Defense"
+  },
+  "autonomousmachinevision": {
+    "main_en": "Autonomous Systems",
+    "sub": "Machine Vision"
+  },
+  "autonomoussoftware": {
+    "main_en": "Autonomous Systems",
+    "sub": "Software"
+  },
+  "autonomousspecialized": {
+    "main_en": "Autonomous Systems",
+    "sub": "Specialized"
+  },
+  "ecommercemarketplaces": {
+    "main_en": "E-commerce",
+    "sub": "Marketplaces"
+  },
+  "ecommerceplatforms": {
+    "main_en": "E-commerce",
+    "sub": "Platforms"
+  },
+  "ecommerceadsmedia": {
+    "main_en": "E-commerce",
+    "sub": "Ads & Media"
+  },
+  "ecommercelogistics": {
+    "main_en": "E-commerce",
+    "sub": "Logistics"
+  },
+  "ecommercesocial": {
+    "main_en": "E-commerce",
+    "sub": "Social"
+  },
+  "ecommerceomnichannel": {
+    "main_en": "E-commerce",
+    "sub": "Omnichannel"
+  },
+  "ecommercegrocery": {
+    "main_en": "E-commerce",
+    "sub": "Grocery"
+  },
+  "ecommercesecondhand": {
+    "main_en": "E-commerce",
+    "sub": "Secondhand"
+  },
+  "ecommercedtc": {
+    "main_en": "E-commerce",
+    "sub": "DTC"
+  },
+  "socialnetworks": {
+    "main_en": "Social Media",
+    "sub": "Networks"
+  },
+  "socialvisualcontent": {
+    "main_en": "Social Media",
+    "sub": "Visual Content"
+  },
+  "socialadvertising": {
+    "main_en": "Social Media",
+    "sub": "Advertising"
+  },
+  "socialgaming": {
+    "main_en": "Social Media",
+    "sub": "Gaming"
+  },
+  "socialniche": {
+    "main_en": "Social Media",
+    "sub": "Niche"
+  },
+  "entertainmentvideo": {
+    "main_en": "Digital Entertainment",
+    "sub": "Video"
+  },
+  "entertainmentmusic": {
+    "main_en": "Digital Entertainment",
+    "sub": "Music"
+  },
+  "entertainmentgaming": {
+    "main_en": "Digital Entertainment",
+    "sub": "Gaming"
+  },
+  "entertainmentinfrastructure": {
+    "main_en": "Digital Entertainment",
+    "sub": "Infrastructure"
+  },
+  "entertainmentbetting": {
+    "main_en": "Digital Entertainment",
+    "sub": "Betting"
+  },
+  "entertainmentgambling": {
+    "main_en": "Digital Entertainment",
+    "sub": "Gambling"
+  },
+  "realestateittelecom": {
+    "main_en": "Real Estate & REITs",
+    "sub": "IT & Telecom"
+  },
+  "realestatewarehousing": {
+    "main_en": "Real Estate & REITs",
+    "sub": "Warehousing"
+  },
+  "realestatehealthcare": {
+    "main_en": "Real Estate & REITs",
+    "sub": "Healthcare"
+  },
+  "realestatehousing": {
+    "main_en": "Real Estate & REITs",
+    "sub": "Housing"
+  },
+  "realestatetourism": {
+    "main_en": "Real Estate & REITs",
+    "sub": "Tourism"
+  },
+  "realestateretail": {
+    "main_en": "Real Estate & REITs",
+    "sub": "Retail"
+  },
+  "realestateoffice": {
+    "main_en": "Real Estate & REITs",
+    "sub": "Office"
+  },
+  "consumerfood": {
+    "main_en": "Consumer Goods",
+    "sub": "Food"
+  },
+  "consumerapparel": {
+    "main_en": "Consumer Goods",
+    "sub": "Apparel"
+  },
+  "consumerluxury": {
+    "main_en": "Consumer Goods",
+    "sub": "Luxury"
+  },
+  "consumerfarmdirect": {
+    "main_en": "Consumer Goods",
+    "sub": "Farm-Direct"
+  },
+  "consumerhousehold": {
+    "main_en": "Consumer Goods",
+    "sub": "Household"
+  },
+  "consumersecondhand": {
+    "main_en": "Consumer Goods",
+    "sub": "Secondhand"
+  },
+  "smarthomedevices": {
+    "main_en": "Smart Home",
+    "sub": "Devices"
+  },
+  "smarthomeautomation": {
+    "main_en": "Smart Home",
+    "sub": "Automation"
+  },
+  "smarthomesecurity": {
+    "main_en": "Smart Home",
+    "sub": "Security"
+  },
+  "smarthomeenergy": {
+    "main_en": "Smart Home",
+    "sub": "Energy"
+  },
+  "smarthomenetworking": {
+    "main_en": "Smart Home",
+    "sub": "Networking"
+  },
+  "smarthomevoiceai": {
+    "main_en": "Smart Home",
+    "sub": "Voice & AI"
+  },
+  "wearablessmartwatches": {
+    "main_en": "Wearables",
+    "sub": "Smartwatches"
+  },
+  "wearablesmedical": {
+    "main_en": "Wearables",
+    "sub": "Medical"
+  },
+  "wearablesimmersive": {
+    "main_en": "Wearables",
+    "sub": "Immersive"
+  },
+  "wearablessoftware": {
+    "main_en": "Wearables",
+    "sub": "Software"
+  },
+  "wearablessport": {
+    "main_en": "Wearables",
+    "sub": "Sport"
+  },
+  "educationplatforms": {
+    "main_en": "Education Technology",
+    "sub": "Platforms"
+  },
+  "educationworkforce": {
+    "main_en": "Education Technology",
+    "sub": "Workforce"
+  },
+  "educationcurriculum": {
+    "main_en": "Education Technology",
+    "sub": "Curriculum"
+  },
+  "educationinfrastructure": {
+    "main_en": "Education Technology",
+    "sub": "Infrastructure"
+  },
+  "energycleansolar": {
+    "main_en": "Energy Renewable",
+    "sub": "Solar"
+  },
+  "energycleanwind": {
+    "main_en": "Energy Renewable",
+    "sub": "Wind"
+  },
+  "energycleanhydrogen": {
+    "main_en": "Energy Renewable",
+    "sub": "Hydrogen"
+  },
+  "energycleangeothermal": {
+    "main_en": "Energy Renewable",
+    "sub": "Geothermal"
+  },
+  "energycleanutilities": {
+    "main_en": "Energy Renewable",
+    "sub": "Utilities"
+  },
+  "energycleanbatteries": {
+    "main_en": "Energy Renewable",
+    "sub": "Batteries"
+  },
+  "energycleansmartgrid": {
+    "main_en": "Energy Renewable",
+    "sub": "Smart Grid"
+  },
+  "energycleanmaterials": {
+    "main_en": "Energy Renewable",
+    "sub": "Materials"
+  },
+  "energycleanbiofuels": {
+    "main_en": "Energy Renewable",
+    "sub": "Biofuels"
+  },
+  "energybaseoilproduction": {
+    "main_en": "Energy Traditional",
+    "sub": "Oil Production"
+  },
+  "energybaseoilrefining": {
+    "main_en": "Energy Traditional",
+    "sub": "Oil Refining"
+  },
+  "energybaseoilservices": {
+    "main_en": "Energy Traditional",
+    "sub": "Oil Services"
+  },
+  "energybasethermal": {
+    "main_en": "Energy Traditional",
+    "sub": "Thermal"
+  },
+  "energybasenuclear": {
+    "main_en": "Energy Traditional",
+    "sub": "Nuclear"
+  },
+  "energybasemajors": {
+    "main_en": "Energy Traditional",
+    "sub": "Majors"
+  },
+  "energybaseutilities": {
+    "main_en": "Energy Traditional",
+    "sub": "Utilities"
+  },
+  "commenergyoil": {
+    "main_en": "Commodities Energy",
+    "sub": "Oil"
+  },
+  "commenergygaslng": {
+    "main_en": "Commodities Energy",
+    "sub": "Gas & LNG"
+  },
+  "commenergyuranium": {
+    "main_en": "Commodities Energy",
+    "sub": "Uranium"
+  },
+  "commenergybiofuels": {
+    "main_en": "Commodities Energy",
+    "sub": "Biofuels"
+  },
+  "commmetalsgold": {
+    "main_en": "Commodities Metals",
+    "sub": "Gold"
+  },
+  "commmetalssilver": {
+    "main_en": "Commodities Metals",
+    "sub": "Silver"
+  },
+  "commmetalsprecious": {
+    "main_en": "Commodities Metals",
+    "sub": "Precious"
+  },
+  "commmetalsindustrial": {
+    "main_en": "Commodities Metals",
+    "sub": "Industrial"
+  },
+  "commmetalsbattery": {
+    "main_en": "Commodities Metals",
+    "sub": "Battery"
+  },
+  "commmetalsrareearth": {
+    "main_en": "Commodities Metals",
+    "sub": "Rare Earth"
+  },
+  "commmetalsrecycling": {
+    "main_en": "Commodities Metals",
+    "sub": "Recycling"
+  },
+  "commagrigrains": {
+    "main_en": "Commodities Agriculture",
+    "sub": "Grains"
+  },
+  "commagrisofts": {
+    "main_en": "Commodities Agriculture",
+    "sub": "Softs"
+  },
+  "commagrilivestock": {
+    "main_en": "Commodities Agriculture",
+    "sub": "Livestock"
+  },
+  "commagrifertilizers": {
+    "main_en": "Commodities Agriculture",
+    "sub": "Fertilizers"
+  },
+  "commagribiofuels": {
+    "main_en": "Commodities Agriculture",
+    "sub": "Biofuels"
+  },
+  "agriculturesmartfarming": {
+    "main_en": "Agriculture & FoodTech",
+    "sub": "Smart Farming"
+  },
+  "agriculturecropinputs": {
+    "main_en": "Agriculture & FoodTech",
+    "sub": "Crop Inputs"
+  },
+  "agricultureindoorfarming": {
+    "main_en": "Agriculture & FoodTech",
+    "sub": "Indoor Farming"
+  },
+  "agriculturealtprotein": {
+    "main_en": "Agriculture & FoodTech",
+    "sub": "Alt Protein"
+  },
+  "agricultureprocessing": {
+    "main_en": "Agriculture & FoodTech",
+    "sub": "Processing"
+  },
+  "environmentalwater": {
+    "main_en": "Environmental Sustainability",
+    "sub": "Water"
+  },
+  "environmentalwaste": {
+    "main_en": "Environmental Sustainability",
+    "sub": "Waste"
+  },
+  "environmentalairquality": {
+    "main_en": "Environmental Sustainability",
+    "sub": "Air Quality"
+  },
+  "environmentalclimate": {
+    "main_en": "Environmental Sustainability",
+    "sub": "Climate"
+  },
+  "environmentalagriculture": {
+    "main_en": "Environmental Sustainability",
+    "sub": "Agriculture"
+  },
+  "healthcarenextgen": {
+    "main_en": "Healthcare & Biotech",
+    "sub": "Next-Gen"
+  },
+  "healthcareoncology": {
+    "main_en": "Healthcare & Biotech",
+    "sub": "Oncology"
+  },
+  "healthcaremetabolic": {
+    "main_en": "Healthcare & Biotech",
+    "sub": "Metabolic"
+  },
+  "healthcarediagnostics": {
+    "main_en": "Healthcare & Biotech",
+    "sub": "Diagnostics"
+  },
+  "healthcaregenomics": {
+    "main_en": "Healthcare & Biotech",
+    "sub": "Genomics"
+  },
+  "healthcaredevices": {
+    "main_en": "Healthcare & Biotech",
+    "sub": "Devices"
+  },
+  "healthcaretelemedicine": {
+    "main_en": "Healthcare & Biotech",
+    "sub": "Telemedicine"
+  },
+  "healthcareitdata": {
+    "main_en": "Healthcare & Biotech",
+    "sub": "IT & Data"
+  },
+  "healthcaretherapeutics": {
+    "main_en": "Healthcare & Biotech",
+    "sub": "Therapeutics"
+  },
+  "longevityhealthcare": {
+    "main_en": "Aging Population & Longevity",
+    "sub": "Healthcare"
+  },
+  "longevityagingpharma": {
+    "main_en": "Aging Population & Longevity",
+    "sub": "Aging Pharma"
+  },
+  "longevityseniorliving": {
+    "main_en": "Aging Population & Longevity",
+    "sub": "Senior Living"
+  },
+  "longevityhealthyaging": {
+    "main_en": "Aging Population & Longevity",
+    "sub": "Healthy Aging"
+  },
+  "nutritionaltprotein": {
+    "main_en": "Healthy Food & Nutrition",
+    "sub": "Alt Protein"
+  },
+  "nutritionretailers": {
+    "main_en": "Healthy Food & Nutrition",
+    "sub": "Retailers"
+  },
+  "nutritionsupplements": {
+    "main_en": "Healthy Food & Nutrition",
+    "sub": "Supplements"
+  },
+  "nutritionmealdelivery": {
+    "main_en": "Healthy Food & Nutrition",
+    "sub": "Meal Delivery"
+  },
+  "fintechpayments": {
+    "main_en": "FinTech",
+    "sub": "Payments"
+  },
+  "fintechneobanks": {
+    "main_en": "FinTech",
+    "sub": "Neobanks"
+  },
+  "fintechlending": {
+    "main_en": "FinTech",
+    "sub": "Lending"
+  },
+  "fintechtrading": {
+    "main_en": "FinTech",
+    "sub": "Trading"
+  },
+  "fintechblockchain": {
+    "main_en": "FinTech",
+    "sub": "Blockchain"
+  },
+  "fintechexchanges": {
+    "main_en": "FinTech",
+    "sub": "Exchanges"
+  },
+  "fintechinsurance": {
+    "main_en": "FinTech",
+    "sub": "Insurance"
+  },
+  "blockchainplatforms": {
+    "main_en": "Crypto & Blockchain",
+    "sub": "Platforms"
+  },
+  "blockchaininfrastructure": {
+    "main_en": "Crypto & Blockchain",
+    "sub": "Infrastructure"
+  },
+  "blockchainpayments": {
+    "main_en": "Crypto & Blockchain",
+    "sub": "Payments"
+  },
+  "blockchainenterprise": {
+    "main_en": "Crypto & Blockchain",
+    "sub": "Enterprise"
+  },
+  "blockchaintokenization": {
+    "main_en": "Crypto & Blockchain",
+    "sub": "Tokenization"
+  },
+  "blockchainmining": {
+    "main_en": "Crypto & Blockchain",
+    "sub": "Mining"
+  }
+}
