@@ -2,9 +2,16 @@ import json
 import urllib.request
 import concurrent.futures
 import os
+import google.generativeai as genai
+from dotenv import load_dotenv
 from flask import Flask, jsonify, render_template
 from cachetools import cached, TTLCache
 import yfinance as yf
+
+load_dotenv()
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+if GEMINI_API_KEY:
+    genai.configure(api_key=GEMINI_API_KEY)
 
 app = Flask(__name__)
 
@@ -26,6 +33,69 @@ if os.path.exists(MAPPING_FILE):
                     "main": main_kr,
                     "sub": theme_val.get("kr", theme_key)
                 }
+
+def auto_map_new_themes(unmapped_keys):
+    if not GEMINI_API_KEY:
+        return
+    
+    # Extract unique main sectors from current mapping
+    main_sectors = {}
+    try:
+        with open(MAPPING_FILE, "r", encoding="utf-8") as f:
+            current_doc = json.load(f)
+            for cat_k, cat_v in current_doc.items():
+                main_sectors[cat_k] = cat_v.get("sector_kr", cat_k)
+    except Exception as e:
+        print(f"Error loading mapping doc: {e}")
+        return
+            
+    prompt = f"""
+I have the following list of unmapped Finviz theme keys: {unmapped_keys}
+
+Extract the theme concept from each key and map it into one of my existing "Main Sectors". You may create a new main sector ONLY IF it doesn't fit any existing one.
+
+Existing Main Sectors:
+{json.dumps(main_sectors, ensure_ascii=False)}
+
+Return strictly a JSON array of objects with the exact structure (no markdown tags):
+[
+  {{ "raw_key": "raw_string", "main_sector_key": "cloud", "main_sector_kr": "클라우드", "theme_en": "Gaming", "theme_kr": "게이밍" }}
+]
+    """
+    try:
+        model = genai.GenerativeModel("gemini-2.5-flash")
+        response = model.generate_content(
+            prompt,
+            generation_config=genai.GenerationConfig(response_mime_type="application/json")
+        )
+        result = json.loads(response.text)
+        
+        # update document
+        for item in result:
+            raw_key = item["raw_key"]
+            cat_key = item["main_sector_key"]
+            if cat_key not in current_doc:
+                current_doc[cat_key] = {"sector_en": cat_key, "sector_kr": item["main_sector_kr"], "themes": {}}
+            
+            if "themes" not in current_doc[cat_key]:
+                current_doc[cat_key]["themes"] = {}
+                
+            current_doc[cat_key]["themes"][raw_key] = {
+                "en": item["theme_en"],
+                "kr": item["theme_kr"]
+            }
+            # update in memory SECTOR_MAPPING
+            SECTOR_MAPPING[raw_key] = {
+                "main": current_doc[cat_key]["sector_kr"],
+                "sub": item["theme_kr"]
+            }
+            
+        # flush to disk
+        with open(MAPPING_FILE, "w", encoding="utf-8") as f:
+            json.dump(current_doc, f, indent=2, ensure_ascii=False)
+            
+    except Exception as e:
+        print(f"Error calling Gemini: {e}")
 
 # 번역 딕셔너리
 TRANSLATIONS = {
@@ -233,6 +303,7 @@ TRANSLATIONS = {
     "Software": "소프트웨어",
     "Networking": "네트워킹",
     "Servers": "서버",
+
     # 주요 지수
     "Dow 30": "다우존스 30",
     "Nasdaq": "나스닥",
@@ -496,6 +567,11 @@ def get_market_data():
     themes_data = fetch_json("https://finviz.com/api/map_perf.ashx?t=themes&st=d1")
     
     if themes_data and "nodes" in themes_data:
+        unmapped_keys = [t_key for t_key in themes_data["nodes"].keys() if t_key not in SECTOR_MAPPING]
+        if unmapped_keys and GEMINI_API_KEY:
+            print(f"Discovered {len(unmapped_keys)} unmapped keys. Calling Gemini Auto-Mapping...")
+            auto_map_new_themes(unmapped_keys)
+
         for t_key, t_perf in themes_data["nodes"].items():
             if t_key in SECTOR_MAPPING:
                 main_kr = SECTOR_MAPPING[t_key]["main"]
