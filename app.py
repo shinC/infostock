@@ -2,7 +2,8 @@ import json
 import urllib.request
 import concurrent.futures
 import os
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 from dotenv import load_dotenv
 from flask import Flask, jsonify, render_template
 from cachetools import cached, TTLCache
@@ -10,8 +11,9 @@ import yfinance as yf
 
 load_dotenv()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+client = None
 if GEMINI_API_KEY:
-    genai.configure(api_key=GEMINI_API_KEY)
+    client = genai.Client(api_key=GEMINI_API_KEY)
 
 app = Flask(__name__)
 
@@ -63,10 +65,12 @@ Return strictly a JSON array of objects with the exact structure (no markdown ta
 ]
     """
     try:
-        model = genai.GenerativeModel("gemini-2.5-flash")
-        response = model.generate_content(
-            prompt,
-            generation_config=genai.GenerationConfig(response_mime_type="application/json")
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                response_mime_type="application/json"
+            )
         )
         result = json.loads(response.text)
         
@@ -507,12 +511,13 @@ def fetch_yfinance_change(ticker):
         if len(data) >= 2:
             prev_close = data['Close'].iloc[-2]
             curr_close = data['Close'].iloc[-1]
+            last_date = data.index[-1].strftime("%Y-%m-%d")
             change = float(((curr_close - prev_close) / prev_close) * 100)
-            return round(change, 2)
-        return 0.0
+            return round(change, 2), last_date
+        return None, None
     except Exception as e:
         print(f"Error fetching yfinance for {ticker}: {e}")
-        return 0.0
+        return None, None
 
 def fetch_theme(s_key):
     themes_url = f"https://finviz.com/api/map_perf_groups.ashx?g=industry&sg={s_key}&v=510&o=name&st=d1"
@@ -522,30 +527,9 @@ def fetch_theme(s_key):
 def get_market_data():
     # 1. 지수 데이터 수집
     indices = []
-    futures_data = fetch_json("https://finviz.com/api/futures_all.ashx?timeframe=NO")
     
-    # futures 매핑: YM(Dow 30), NQ(Nasdaq 100), ER2(Russell 2000), ES(S&P 500), CL(WTI), VX(VIX)
-    futures_map = {
-        "YM": "Dow 30",
-        "NQ": "Nasdaq 100",
-        "ER2": "Russell 2000",
-        "ES": "S&P 500",
-        "CL": "WTI",
-        "VX": "VIX"
-    }
-    
-    found_futures = set()
-    if futures_data:
-        for key, value in futures_map.items():
-            if key in futures_data:
-                item = futures_data[key]
-                change = item.get("change", 0)
-                pct_change = change
-                indices.append({"name": translate(value), "original": value, "change": round(pct_change, 2)})
-                found_futures.add(value)
-                
-    # fallback to yfinance
-    yf_fallbacks = [
+    # Priority 1: yfinance
+    yf_indices = [
         ("Dow 30", "^DJI"),
         ("Nasdaq", "^IXIC"),
         ("Nasdaq 100", "^NDX"),
@@ -557,10 +541,43 @@ def get_market_data():
         ("VIX", "^VIX")
     ]
     
-    for name, ticker in yf_fallbacks:
-        if name not in found_futures:
-            pct_change = fetch_yfinance_change(ticker)
+    found_indices = set()
+    market_date = "알 수 없음"
+    
+    for name, ticker in yf_indices:
+        pct_change, date_val = fetch_yfinance_change(ticker)
+        if pct_change is not None:
+            if market_date == "알 수 없음" and date_val:
+                market_date = date_val
             indices.append({"name": translate(name), "original": name, "change": pct_change})
+            found_indices.add(name)
+            
+    # Priority 2: finviz fallback
+    futures_map_rev = {
+        "Dow 30": "YM",
+        "Nasdaq 100": "NQ",
+        "Russell 2000": "ER2",
+        "S&P 500": "ES",
+        "WTI": "CL",
+        "VIX": "VX"
+    }
+    
+    missing_indices = [name for name, ticker in yf_indices if name not in found_indices]
+    if missing_indices:
+        futures_data = fetch_json("https://finviz.com/api/futures_all.ashx?timeframe=NO")
+        if futures_data:
+            for name in missing_indices:
+                if name in futures_map_rev:
+                    finviz_key = futures_map_rev[name]
+                    if finviz_key in futures_data:
+                        change = futures_data[finviz_key].get("change", 0)
+                        indices.append({"name": translate(name), "original": name, "change": round(change, 2)})
+                        found_indices.add(name)
+                        
+    # For any still missing, append with 0.0
+    for name, ticker in yf_indices:
+        if name not in found_indices:
+            indices.append({"name": translate(name), "original": name, "change": 0.0})
             
     # 2. 테마 데이터 단일 스트림 수집 (Themes API)
     sectors_dict = {}
@@ -614,6 +631,7 @@ def get_market_data():
     sectors_list.sort(key=lambda x: x["change"], reverse=True)
     
     return {
+        "market_date": market_date,
         "indices": indices,
         "sectors": sectors_list
     }

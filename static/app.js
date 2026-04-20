@@ -15,6 +15,16 @@ async function fetchData() {
 }
 
 function renderDashboard(data) {
+    if (data.market_date && data.market_date !== "알 수 없음") {
+        const dateStr = `(${data.market_date} 종가 기준)`;
+        
+        const iDateEl = document.getElementById('indices-date');
+        if (iDateEl) iDateEl.textContent = dateStr;
+        
+        const sDateEl = document.getElementById('sectors-date');
+        if (sDateEl) sDateEl.textContent = dateStr;
+    }
+
     const indicesContainer = document.getElementById('indices-container');
     const sectorsContainer = document.getElementById('sectors-container');
 
