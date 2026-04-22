@@ -506,14 +506,24 @@ def fetch_json(url):
         return None
 
 def fetch_yfinance_change(ticker):
+    if not ticker:
+        return None, None
     try:
-        data = yf.Ticker(ticker).history(period="5d")
-        if len(data) >= 2:
-            prev_close = data['Close'].iloc[-2]
-            curr_close = data['Close'].iloc[-1]
-            last_date = data.index[-1].strftime("%Y-%m-%d")
-            change = float(((curr_close - prev_close) / prev_close) * 100)
+        t = yf.Ticker(ticker)
+        info = t.info
+        if "regularMarketChangePercent" in info:
+            change = info["regularMarketChangePercent"]
+            data = t.history(period="1d")
+            last_date = data.index[-1].strftime("%Y-%m-%d") if not data.empty else None
             return round(change, 2), last_date
+        else:
+            data = t.history(period="5d")
+            if len(data) >= 2:
+                prev_close = data['Close'].iloc[-2]
+                curr_close = data['Close'].iloc[-1]
+                last_date = data.index[-1].strftime("%Y-%m-%d")
+                change = float(((curr_close - prev_close) / prev_close) * 100)
+                return round(change, 2), last_date
         return None, None
     except Exception as e:
         print(f"Error fetching yfinance for {ticker}: {e}")
@@ -544,12 +554,13 @@ def get_market_data():
     found_indices = set()
     market_date = "알 수 없음"
     
+    indices_dict = {}
     for name, ticker in yf_indices:
         pct_change, date_val = fetch_yfinance_change(ticker)
         if pct_change is not None:
             if market_date == "알 수 없음" and date_val:
                 market_date = date_val
-            indices.append({"name": translate(name), "original": name, "change": pct_change})
+            indices_dict[name] = {"name": translate(name), "original": name, "change": pct_change}
             found_indices.add(name)
             
     # Priority 2: finviz fallback
@@ -570,14 +581,22 @@ def get_market_data():
                 if name in futures_map_rev:
                     finviz_key = futures_map_rev[name]
                     if finviz_key in futures_data:
-                        change = futures_data[finviz_key].get("change", 0)
-                        indices.append({"name": translate(name), "original": name, "change": round(change, 2)})
+                        f_data = futures_data[finviz_key]
+                        if "last" in f_data and "prevClose" in f_data and f_data["prevClose"] != 0:
+                            change = ((f_data["last"] - f_data["prevClose"]) / f_data["prevClose"]) * 100
+                        else:
+                            change = f_data.get("change", 0)
+                        indices_dict[name] = {"name": translate(name), "original": name, "change": round(change, 2)}
                         found_indices.add(name)
                         
     # For any still missing, append with 0.0
     for name, ticker in yf_indices:
         if name not in found_indices:
-            indices.append({"name": translate(name), "original": name, "change": 0.0})
+            indices_dict[name] = {"name": translate(name), "original": name, "change": 0.0}
+            
+    # 배열 순서를 yf_indices 기준 유지
+    for name, _ in yf_indices:
+        indices.append(indices_dict[name])
             
     # 2. 테마 데이터 단일 스트림 수집 (Themes API)
     sectors_dict = {}
