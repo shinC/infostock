@@ -82,15 +82,28 @@ let currentSort = 'desc'; // 'desc', 'asc', 'name'
 let currentView = 'all';  // 'all', 'compact'
 let cachedSectors = [];
 
+function getColumnCount() {
+    const width = window.innerWidth;
+    if (width <= 480) return 1;
+    if (width <= 768) return 2;
+    if (width <= 1024) return 3;
+    return 5;
+}
+
 function renderSectors() {
-    const boardCols = [
-        document.getElementById('board-col-1'),
-        document.getElementById('board-col-2'),
-        document.getElementById('board-col-3'),
-        document.getElementById('board-col-4'),
-        document.getElementById('board-col-5')
-    ];
-    boardCols.forEach(col => col.innerHTML = '');
+    const sectorsContainer = document.getElementById('sectors-container');
+    sectorsContainer.innerHTML = '';
+    
+    const numCols = getColumnCount();
+    const boardCols = [];
+    
+    for (let i = 0; i < numCols; i++) {
+        const col = document.createElement('div');
+        col.className = 'board-column';
+        col.id = `board-col-${i+1}`;
+        sectorsContainer.appendChild(col);
+        boardCols.push(col);
+    }
 
     let sectorsToRender = [...cachedSectors];
 
@@ -157,7 +170,7 @@ function renderSectors() {
         });
 
         // Distribute tables across the columns
-        boardCols[i % 5].appendChild(table);
+        boardCols[i % numCols].appendChild(table);
     });
 }
 
@@ -192,4 +205,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (cachedSectors.length > 0) renderSectors();
         });
     }
+
+    let currentCols = getColumnCount();
+    window.addEventListener('resize', () => {
+        const newCols = getColumnCount();
+        if (newCols !== currentCols) {
+            currentCols = newCols;
+            if (cachedSectors.length > 0) renderSectors();
+        }
+    });
 });
