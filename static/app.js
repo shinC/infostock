@@ -9,14 +9,14 @@ async function fetchData() {
         renderDashboard(data);
     } catch (error) {
         console.error("Error fetching data:", error);
-        document.getElementById('indices-container').innerHTML = '<div class="loader">데이터를 불러오는 중 오류가 발생했습니다.</div>';
-        document.getElementById('sectors-container').innerHTML = '<div class="loader">데이터를 불러오는 중 오류가 발생했습니다.</div>';
+        document.getElementById('indices-container').innerHTML = '<div class="loader"><span>ERROR LOADING DATA</span></div>';
+        document.getElementById('sectors-container').innerHTML = '<div class="loader"><span>ERROR LOADING DATA</span></div>';
     }
 }
 
 function renderDashboard(data) {
     if (data.market_date && data.market_date !== "알 수 없음") {
-        const dateStr = `(${data.market_date} 종가 기준)`;
+        const dateStr = `[ ${data.market_date} CLOSE ]`;
         
         const iDateEl = document.getElementById('indices-date');
         if (iDateEl) iDateEl.textContent = dateStr;
@@ -26,54 +26,28 @@ function renderDashboard(data) {
     }
 
     const indicesContainer = document.getElementById('indices-container');
-    const sectorsContainer = document.getElementById('sectors-container');
-
-    // 1. Calculate global max and min for the dynamic heatmap
-    let allValues = [];
     
-    // Add indices
-    data.indices.forEach(item => allValues.push(item.change));
-    
-    // Add sectors and themes
-    data.sectors.forEach(sector => {
-        allValues.push(sector.change);
-        sector.themes.forEach(theme => allValues.push(theme.change));
-    });
-
-    // Remove NaN or undefined just in case
-    allValues = allValues.filter(val => typeof val === 'number' && !isNaN(val));
-
-    const maxVal = Math.max(...allValues, 0.01); // Avoid division by zero
-    const minVal = Math.min(...allValues, -0.01);
-
-    // Color Assignment Logic
-    const getHeatmapClass = (val) => {
-        if (val > 0) {
-            if (val >= maxVal * 0.66) return 'pos-3';
-            if (val >= maxVal * 0.33) return 'pos-2';
-            return 'pos-1';
-        } else if (val < 0) {
-            if (val <= minVal * 0.66) return 'neg-3';
-            if (val <= minVal * 0.33) return 'neg-2';
-            return 'neg-1';
-        } else {
-            return 'neu';
-        }
-    };
-
     // Render Indices
     indicesContainer.innerHTML = '';
-    data.indices.forEach(obj => {
+    data.indices.forEach((obj, index) => {
+        const valClass = obj.change > 0 ? 'val-pos' : (obj.change < 0 ? 'val-neg' : 'val-neu');
+        const icon = obj.change > 0 ? '▲' : (obj.change < 0 ? '▼' : '−');
+        
         const div = document.createElement('div');
-        div.className = `card ${getHeatmapClass(obj.change)}`;
+        div.className = `index-card`;
+        div.style.animationDelay = `${index * 0.1}s`; // Stagger animation
+        
         div.innerHTML = `
-            <div class="card-title">${obj.name}</div>
-            <div class="card-value">${obj.change > 0 ? '+' : ''}${obj.change.toFixed(2)}%</div>
+            <div class="index-name">${obj.name}</div>
+            <div class="index-value ${valClass}">
+                <span class="indicator">${icon}</span> 
+                ${obj.change > 0 ? '+' : ''}${obj.change.toFixed(2)}%
+            </div>
         `;
         indicesContainer.appendChild(div);
     });
 
-    // Render Sectors & Themes (Board Layout)
+    // Cache sectors for sorting/filtering
     cachedSectors = data.sectors;
     renderSectors();
 }
@@ -86,7 +60,8 @@ function getColumnCount() {
     const width = window.innerWidth;
     if (width <= 480) return 1;
     if (width <= 768) return 2;
-    if (width <= 1024) return 3;
+    if (width <= 1100) return 3;
+    if (width <= 1400) return 4;
     return 5;
 }
 
@@ -117,60 +92,58 @@ function renderSectors() {
     }
 
     sectorsToRender.forEach((sector, i) => {
-        const table = document.createElement('table');
-        table.className = 'sector-table';
+        const panel = document.createElement('div');
+        panel.className = 'sector-panel';
+        panel.style.animationDelay = `${(i % numCols) * 0.1 + Math.floor(i / numCols) * 0.05}s`; // Diagonal stagger effect
         
+        const sIcon = sector.change > 0 ? '▲' : (sector.change < 0 ? '▼' : '−');
+        const sValClass = sector.change > 0 ? 'val-pos' : (sector.change < 0 ? 'val-neg' : 'val-neu');
+
         // Header
-        const headerRow = document.createElement('tr');
-        const th = document.createElement('th');
-        th.colSpan = 2;
-        const sIcon = sector.change > 0 ? '▲' : (sector.change < 0 ? '▼' : '');
-        th.innerHTML = `${sector.name} <span style="font-size:0.85rem; margin-left:8px; font-weight:normal;">${sIcon} ${sector.change > 0 ? '+' : ''}${sector.change.toFixed(2)}%</span>`;
-        if (sector.change > 0) th.style.color = '#000'; // Kept original style, adjust if needed
-        headerRow.appendChild(th);
-        table.appendChild(headerRow);
+        const header = document.createElement('div');
+        header.className = 'sector-header';
+        header.innerHTML = `
+            <div class="sector-name">${sector.name}</div>
+            <div class="sector-val ${sValClass}">${sIcon} ${sector.change > 0 ? '+' : ''}${sector.change.toFixed(2)}%</div>
+        `;
+        panel.appendChild(header);
         
-        // Themes Truncation (Max 3, prioritized by most extreme moves)
+        // Themes Truncation
         let themesToRender = sector.themes;
         if (currentView === 'compact' && themesToRender.length > 3) {
             let topMovers = [...themesToRender].sort((a, b) => Math.abs(b.change) - Math.abs(a.change)).slice(0, 3);
-            topMovers.sort((a, b) => b.change - a.change); // Re-sort for display (Highest to Lowest)
+            topMovers.sort((a, b) => b.change - a.change);
             themesToRender = topMovers;
         }
 
+        const themeList = document.createElement('div');
+        themeList.className = 'theme-list';
+
         themesToRender.forEach(theme => {
-            const tr = document.createElement('tr');
+            const row = document.createElement('div');
             
-            const icon = theme.change > 0 ? '▲ ' : (theme.change < 0 ? '▼ ' : '');
+            const icon = theme.change > 0 ? '▲' : (theme.change < 0 ? '▼' : '−');
+            let valClass = theme.change > 0 ? 'val-pos' : (theme.change < 0 ? 'val-neg' : 'val-neu');
             
-            // Standard Text Colors (Name is default black/dark, Value is colored)
-            let nameClass = 'text-neu'; // name is mostly dark
-            let valClass = theme.change > 0 ? 'text-pos' : (theme.change < 0 ? 'text-neg' : 'text-neu');
+            row.className = `theme-row`;
             
-            // Strong Highlight Rules ( >= 3% or <= -3% )
+            // Strong Highlights
             if (theme.change >= 3) {
-                nameClass = 'bg-pos-strong';
-                valClass = 'bg-pos-strong';
+                row.classList.add('row-pos-strong');
             } else if (theme.change <= -3) {
-                nameClass = 'bg-neg-strong';
-                valClass = 'bg-neg-strong';
+                row.classList.add('row-neg-strong');
             }
             
-            const nameTd = document.createElement('td');
-            nameTd.className = `theme-name ${nameClass}`;
-            nameTd.textContent = icon + theme.name;
+            row.innerHTML = `
+                <div class="theme-name"><span class="indicator">${icon}</span> ${theme.name}</div>
+                <div class="theme-val ${valClass}">${theme.change > 0 ? '+' : ''}${theme.change.toFixed(2)}%</div>
+            `;
             
-            const valTd = document.createElement('td');
-            valTd.className = `theme-val ${valClass}`;
-            valTd.textContent = `${theme.change > 0 ? '+' : ''}${theme.change.toFixed(2)}%`;
-            
-            tr.appendChild(nameTd);
-            tr.appendChild(valTd);
-            table.appendChild(tr);
+            themeList.appendChild(row);
         });
 
-        // Distribute tables across the columns
-        boardCols[i % numCols].appendChild(table);
+        panel.appendChild(themeList);
+        boardCols[i % numCols].appendChild(panel);
     });
 }
 
@@ -180,13 +153,13 @@ document.addEventListener('DOMContentLoaded', () => {
         sortBtn.addEventListener('click', () => {
             if (currentSort === 'desc') {
                 currentSort = 'asc';
-                sortBtn.textContent = '정렬: 낮은 ⬇️';
+                sortBtn.innerHTML = '정렬: 낮은 순 <span class="btn-icon">▼</span>';
             } else if (currentSort === 'asc') {
                 currentSort = 'name';
-                sortBtn.textContent = '정렬: 이름 🔠';
+                sortBtn.innerHTML = '정렬: 이름 순 <span class="btn-icon">🔠</span>';
             } else {
                 currentSort = 'desc';
-                sortBtn.textContent = '정렬: 높은 ⬆️';
+                sortBtn.innerHTML = '정렬: 높은 순 <span class="btn-icon">▲</span>';
             }
             if (cachedSectors.length > 0) renderSectors();
         });
@@ -197,10 +170,10 @@ document.addEventListener('DOMContentLoaded', () => {
         filterBtn.addEventListener('click', () => {
             if (currentView === 'all') {
                 currentView = 'compact';
-                filterBtn.textContent = '보기: 하위 3개 요약 ✂️';
+                filterBtn.innerHTML = '보기: 하위 3개 요약 <span class="btn-icon">✂️</span>';
             } else {
                 currentView = 'all';
-                filterBtn.textContent = '보기: 전체 뷰 📋';
+                filterBtn.innerHTML = '보기: 전체 뷰 <span class="btn-icon">👁️</span>';
             }
             if (cachedSectors.length > 0) renderSectors();
         });

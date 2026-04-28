@@ -4,34 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>미국 주식 섹터 및 테마 등락율 대시보드</title>
+    <title>미국 주식 섹터 및 테마 시황 (Glassmorphism Dark)</title>
     <link rel="stylesheet" href="/static/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Distinctive fonts for premium feel: Outfit for headers, Fira Code for data -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <!-- Atmospheric background mesh -->
+    <div class="bg-mesh">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    
+    <!-- Noise overlay for premium texture -->
+    <div class="noise-overlay"></div>
+
     <div class="container">
         <header>
-            <h1>미국 주식 전일 기준 대시보드</h1>
-            <p>지수, 섹터 및 하위 테마 등락률</p>
+            <div class="header-glow"></div>
+            <h1>US MARKET PULSE</h1>
+            <p>지수, 섹터 및 하위 테마 등락률 대시보드</p>
         </header>
 
         <section class="indices-section">
-            <h2>미국 주요 지수 <span id="indices-date"
-                    style="font-size: 0.7em; color: #888; font-weight: normal; margin-left: 8px;"></span></h2>
-            <div id="indices-container" class="grid-container indices-3x3">
-                <div class="loader">Loading...</div>
+            <div class="section-header">
+                <h2>MARKET INDICES <span id="indices-date" class="date-badge"></span></h2>
+            </div>
+            <div id="indices-container" class="grid-container indices-grid">
+                <div class="loader">
+                    <div class="spinner"></div>
+                    <span>INITIALIZING...</span>
+                </div>
             </div>
         </section>
 
         <section class="sectors-section">
-            <div
-                style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(0, 0, 0, 0.1); margin-bottom: 24px; padding-bottom: 12px;">
-                <h2 style="border: none; margin: 0; padding: 0;">섹터 및 테마 시황 <span id="sectors-date"
-                        style="font-size: 0.7em; color: #888; font-weight: normal; margin-left: 8px;"></span></h2>
-                <div>
-                    <button id="filter-btn" class="sort-button" style="margin-right: 8px;">보기: 전체 뷰 📋</button>
-                    <button id="sort-btn" class="sort-button">정렬: 높은 ⬆️</button>
+            <div class="section-header space-between">
+                <h2>SECTORS & THEMES <span id="sectors-date" class="date-badge"></span></h2>
+                <div class="controls-group">
+                    <button id="filter-btn" class="glass-btn">보기: 전체 뷰 <span class="btn-icon">👁️</span></button>
+                    <button id="sort-btn" class="glass-btn primary">정렬: 높은 순 <span class="btn-icon">▲</span></button>
                 </div>
             </div>
             <div id="sectors-container" class="board-container">
