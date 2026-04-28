@@ -8,15 +8,15 @@ async function fetchData() {
         const data = await response.json();
         renderDashboard(data);
     } catch (error) {
-        console.error("Error fetching data:", error);
-        document.getElementById('indices-container').innerHTML = '<div class="loader"><span>ERROR LOADING DATA</span></div>';
-        document.getElementById('sectors-container').innerHTML = '<div class="loader"><span>ERROR LOADING DATA</span></div>';
+        console.error("데이터 로딩 중 오류 발생:", error);
+        document.getElementById('indices-container').innerHTML = '<div class="loader"><span>데이터를 불러오는 중 오류가 발생했습니다.</span></div>';
+        document.getElementById('sectors-container').innerHTML = '<div class="loader"><span>데이터를 불러오는 중 오류가 발생했습니다.</span></div>';
     }
 }
 
 function renderDashboard(data) {
     if (data.market_date && data.market_date !== "알 수 없음") {
-        const dateStr = `[ ${data.market_date} CLOSE ]`;
+        const dateStr = `[ ${data.market_date} 종가 기준 ]`;
         
         const iDateEl = document.getElementById('indices-date');
         if (iDateEl) iDateEl.textContent = dateStr;
@@ -35,10 +35,10 @@ function renderDashboard(data) {
         
         const div = document.createElement('div');
         div.className = `index-card`;
-        div.style.animationDelay = `${index * 0.1}s`; // Stagger animation
+        div.style.animationDelay = `${index * 0.05}s`;
         
         div.innerHTML = `
-            <div class="index-name">${obj.name}</div>
+            <span class="index-name">${obj.name}</span>
             <div class="index-value ${valClass}">
                 <span class="indicator">${icon}</span> 
                 ${obj.change > 0 ? '+' : ''}${obj.change.toFixed(2)}%
@@ -47,7 +47,7 @@ function renderDashboard(data) {
         indicesContainer.appendChild(div);
     });
 
-    // Cache sectors for sorting/filtering
+    // Cache for sorting/filtering
     cachedSectors = data.sectors;
     renderSectors();
 }
@@ -82,7 +82,7 @@ function renderSectors() {
 
     let sectorsToRender = [...cachedSectors];
 
-    // Apply User Sort
+    // 정렬 로직
     if (currentSort === 'desc') {
         sectorsToRender.sort((a, b) => b.change - a.change);
     } else if (currentSort === 'asc') {
@@ -94,7 +94,7 @@ function renderSectors() {
     sectorsToRender.forEach((sector, i) => {
         const panel = document.createElement('div');
         panel.className = 'sector-panel';
-        panel.style.animationDelay = `${(i % numCols) * 0.1 + Math.floor(i / numCols) * 0.05}s`; // Diagonal stagger effect
+        panel.style.animationDelay = `${(i % numCols) * 0.05 + Math.floor(i / numCols) * 0.03}s`;
         
         const sIcon = sector.change > 0 ? '▲' : (sector.change < 0 ? '▼' : '−');
         const sValClass = sector.change > 0 ? 'val-pos' : (sector.change < 0 ? 'val-neg' : 'val-neu');
@@ -108,7 +108,7 @@ function renderSectors() {
         `;
         panel.appendChild(header);
         
-        // Themes Truncation
+        // 요약 보기 필터링
         let themesToRender = sector.themes;
         if (currentView === 'compact' && themesToRender.length > 3) {
             let topMovers = [...themesToRender].sort((a, b) => Math.abs(b.change) - Math.abs(a.change)).slice(0, 3);
@@ -121,13 +121,12 @@ function renderSectors() {
 
         themesToRender.forEach(theme => {
             const row = document.createElement('div');
-            
             const icon = theme.change > 0 ? '▲' : (theme.change < 0 ? '▼' : '−');
             let valClass = theme.change > 0 ? 'val-pos' : (theme.change < 0 ? 'val-neg' : 'val-neu');
             
             row.className = `theme-row`;
             
-            // Strong Highlights
+            // 급등/급락 강조 (3% 기준)
             if (theme.change >= 3) {
                 row.classList.add('row-pos-strong');
             } else if (theme.change <= -3) {
@@ -170,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
         filterBtn.addEventListener('click', () => {
             if (currentView === 'all') {
                 currentView = 'compact';
-                filterBtn.innerHTML = '보기: 하위 3개 요약 <span class="btn-icon">✂️</span>';
+                filterBtn.innerHTML = '보기: 하위 요약 <span class="btn-icon">✂️</span>';
             } else {
                 currentView = 'all';
                 filterBtn.innerHTML = '보기: 전체 뷰 <span class="btn-icon">👁️</span>';
